@@ -1,0 +1,19 @@
+{
+  "name": "carscrudapp",
+  "version": "1.0.0",
+  "description": "Cars crud app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmede7th/CarsCrudApp.git"
+  },
+  "author": "Muhammad Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmede7th/CarsCrudApp/issues"
+  },
+  "homepage": "https://github.com/ahmede7th/CarsCrudApp#readme"
+}
