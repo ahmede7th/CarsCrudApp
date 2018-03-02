@@ -1,0 +1,14 @@
+<% include ../partials/boilerplate %>
+
+
+<h2>MERCEDES BENZ MAIN PAGE</h2>
+<button><a href="http://localhost:3000/benz/search">Search</a></button>
+<% for (let benz of data) { %>
+  <ul>
+      <b><%= benz.name %></b>
+     </a>
+  </ul>
+
+  <% } %>
+
+<% include ../partials/footer %>

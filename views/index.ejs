@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="../../styles/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles/index.css">
 <title>cars app</title>
 </head>
 <body>
+<ul id="dropdown">
+  <button><li><a href="http://localhost:3000/">Home</a></li></button>
+    <button><li><a href="http://localhost:3000/forum">Forum</a></li></button>
+  <button><li class="dropdown"><a href="#drop"class="dropbtn">Manufacturer</a>
+    <div class="dropdown-content">
+      <a href="http://localhost:3000/benz">Mercedes-Benz</a>
+      <a href="https://www.bmwusa.com/" target="_blank" >BMW</a>
+      <a href="http://www.audi.com/" target="_blank">Audi</a>
+    </div>
+  </li></button>
+</ul>
 
-<h1> WELCOME TO CARS </h1>
 
 
 
 
+
+
+
+
+<script src ="../../src/script.js"></script>
 <footer>
 made by WDI GOAT
 </footer>
-<script src ="../../src/script.js"></script>
 </body>
 </html>

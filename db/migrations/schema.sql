@@ -1,0 +1,35 @@
+
+
+DROP TABLE IF EXISTS benzdb;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE IF NOT EXISTS benzdb(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR,
+  num INTEGER,
+  exp INTEGER,
+  height INTEGER,
+  weight INTEGER,
+  type VARCHAR
+);
+
+
+
+
+CREATE TABLE IF NOT EXISTS users(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR,
+  password VARCHAR
+);
+
+
+
+
+CREATE TABLE IF NOT EXISTS posts(
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255),
+  content TEXT,
+  comment TEXT,
+  commentDate date DEFAULT CURRENT_TIMESTAMP
+);
