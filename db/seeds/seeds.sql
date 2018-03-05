@@ -1,3 +1,4 @@
+\c benzdb;
 INSERT INTO benzdb(
 name, num, exp, height, weight, type)
 VALUES
@@ -9,8 +10,8 @@ VALUES
 );
 
 
-INSERT INTO users(name,password) Values("foo","bar");
+INSERT INTO users(name,password) Values('foo','bar');
 
 
 
-INSERT INTO posts(title,content,comment,commentDate) Values("sample","sample content text","sample comment");
+INSERT INTO posts(title,content,comment) Values('sample','sample content text','sample comment');
