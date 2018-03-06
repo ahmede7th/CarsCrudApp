@@ -7,7 +7,7 @@ const views = require('../controllers/viewsController')
 // })
 
 postsRouter.get('/:id/edit', postsController.getOne, views.showEditForm, views.show404);
-postsRouter.get('/new',postsController.makeBlankPost, views.showAddForm, views.show404);
+postsRouter.get('/new',postsController.index,postsController.makeBlankPost, views.showAddForm);
 
 postsRouter.route('/:id')
   .get(postsController.getOne, views.showOne, views.show404)

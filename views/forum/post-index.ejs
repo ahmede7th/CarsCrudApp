@@ -1,15 +1,18 @@
 
 <% include ../partials/boilerplate %>
 <h2>Forum</h2>
-<button type="button" name="button"><a href="/posts/new">Add post</a></button>
+<button type="button" name="button"><a href="/forum/new">Add post</a></button>
 
-<button type="button" name="button"><a href="/posts/new">Delete post</a></button>
-<button type="button" name="button"><a href="/posts/new">Update post</a></button>
+<button type="button" name="button"><a href="/forum/post-edit">Delete post</a></button>
+<button type="button" name="button"><a href="/forum/post-single">Update post</a></button>
 
 <% for (let post of data) { %>
   <div class='post'>
+    <p><%= post.title %></p>
     <p><%= post.content %></p>
-    <a href='/posts/<%= post.id%>'>Learn more</a>
+    <p><%= post.comment %></p>
+    <a href='/posts/<%= post.id%>'></a>
+    <h2>--------------------------------</h2>
   </div>
 <% } %>
 
