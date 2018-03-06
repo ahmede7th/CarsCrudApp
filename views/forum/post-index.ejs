@@ -1,0 +1,16 @@
+
+<% include ../partials/boilerplate %>
+<h2>Forum</h2>
+<button type="button" name="button"><a href="/posts/new">Add post</a></button>
+
+<button type="button" name="button"><a href="/posts/new">Delete post</a></button>
+<button type="button" name="button"><a href="/posts/new">Update post</a></button>
+
+<% for (let post of data) { %>
+  <div class='post'>
+    <p><%= post.content %></p>
+    <a href='/posts/<%= post.id%>'>Learn more</a>
+  </div>
+<% } %>
+
+<% include ../partials/footer %>

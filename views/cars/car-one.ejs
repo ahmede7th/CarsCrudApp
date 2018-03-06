@@ -1,10 +1,41 @@
 <% include ../partials/boilerplate %>
+<script src='/src/benz.js'></script>
+
+<br>
+<br>
+<script>
+$(getOne=>{
+  $( document ).ready(()=>{
+    console.log('ready')
+    $.ajax({
+      url: `https://api.mercedes-benz.com/configurator/v1/markets/en_GB/models?bodyId=LIMOUSINE&apikey=0cf84dde-d453-42ac-bcbe-b90ed0e32ae0`,
+      method: 'GET',
+      success: (data)=>{
+
+      }
+    }).done(function( data ) {
+      console.log(data)
+      $( "p" ).empty();
+      console.log(data)
+      findAll(data)
+      console.log(findAll())
+    })
+    })
+    })
+</script>
+
+<%#
+<form name="form1" action="next.html" method="get">
+<table>
+    <tr>
+        <td id="here">test</td>
+    </tr>
+</table>
+</form> %>
 
 
-<h2>show car-one.ejs</h2>
-<h3>searched car listed here</h3>
 
 
 
-
+<script src='/src/jquery.js'></script>
 <% include ../partials/footer %>

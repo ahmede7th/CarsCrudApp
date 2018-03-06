@@ -1,0 +1,19 @@
+<% include ../partials/boilerplate %>
+<form method="POST" action="/posts/<%= data.id %>?_method=PUT">
+  <input name="id" type="hidden" value="<%= data.id %>">
+  <input name="title" type="text" value="<%= data.title %>" />
+  <input name="content" type="text" value="<%= data.content %>" />
+<input name="comment" type="text" value="<%= data.comment %>" />
+  <select name="post_id">
+    <% posts.forEach(post =>{ %>
+      <option value="<%= post.id %>" <%=post.id === data.post_id ? 'selected' : '' %>>
+      <%= post.post %>
+      </option>
+    <% }) %>
+  </select>
+
+
+  <input type="submit" value="Edit it!" />
+</form>
+
+<% include ../partials/footer %>

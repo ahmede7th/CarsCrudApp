@@ -51,9 +51,3 @@ module.exports = Car
 //     );
 //   },
 // }
-
-
-
-Car.findAll()
-.then(results => console.log(results))
-.catch(err => console.log(err));

@@ -4,39 +4,38 @@
 function findAll(data)
 {
   $.each( data, function( i, item ) {
-    $('p').append("<br>name: <a id=test href="+data[i].vehicleClass._links.models+">"+data[i].name+'<br>'+'<br></a>')
+    $('p').append("<br>name: <a id=single href=benz/car-one>"+data[i].name+'<br>'+'<br></a>')
     $('p').append('class: '+data[i].vehicleClass.className+'<br>'+'<br>')
     $('p').append('price: $'+data[i].priceInformation.price+'<br>'+'<br>')
-    $('p').append('-----------------Next Car------------------'+'<br>')
+    $('p').append('-----------------------------------'+'<br>')
   })
 }
 
+
+
 $(getOne=>{
-  $("#test").click((req,res) =>{
-    console.log('getting all cars')
-      res.render('cars/car-one',{
-        data:car
-      })
-    }).done((err)=>{
-      console.log(err)
-      res.status(500).json(err)
+  $("#single").click(()=>{
+    $.ajax({
+      url: `https://api.mercedes-benz.com/configurator/v1/markets/en_GB/models?bodyId=LIMOUSINE&apikey=0cf84dde-d453-42ac-bcbe-b90ed0e32ae0`,
+      method: 'GET',
+      success: (data)=>{
+
+      }
+    }).done(function( data ) {
+      console.log(data)
+      $( "p" ).empty();
+      findAll(data)})
+
     })
-  })
 
-  $(sgetOne=>{
-    $("#test").click(()=>{
-      $.ajax({
-        url: `https://api.mercedes-benz.com/configurator/v1/markets/en_GB/models?bodyId=LIMOUSINE&apikey=0cf84dde-d453-42ac-bcbe-b90ed0e32ae0`,
-        method: 'GET',
-        success: (data)=>{
-
-        }
-      }).done(function( data ) {
-        console.log(data)
-        $( "p" ).empty();
-        findAll(data)})})})
+    })
 
 
+
+
+
+
+//------show alls
 $(showAllSedans=>{
   $("#allSedansButton").click(()=>{
     $.ajax({
