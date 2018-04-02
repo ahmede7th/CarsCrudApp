@@ -10,6 +10,6 @@ postsRouter.get('/new', postsController.newpost, viewsController.newPost)
 postsRouter.get('/:id', postsController.getOne, viewsController.showPost)
 postsRouter.get('/:id/edit', postsController.getOne, viewsController.editPost)
 postsRouter.put('/:id', postsController.update)
-postsRouter.delete('/:id', postsController.delete)
+postsRouter.delete('/:id', postsController.delete, viewsController.redirectToPost)
 
 module.exports = postsRouter;

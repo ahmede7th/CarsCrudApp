@@ -8,7 +8,7 @@
 <button>
   <a href="/forum/<%= data.id %>/edit"> Edit this post </a>
 </button>
-  <form action="/posts/<%= data.id %>?_method=Delete" method="Post">
+  <form action="/forum/<%= data.id %>?_method=Delete" method="Post">
     <input type="Submit" value="Delete"/>
   </form>
   <a href='/forum'>See all posts</a>
