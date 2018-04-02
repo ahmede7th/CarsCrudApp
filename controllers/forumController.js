@@ -25,7 +25,7 @@ create(req, res, next) {
     console.log(req.body, 'body');
     postDB.save(req.body)
       .then(results => {
-        res.locals.post = result;
+        res.locals.post = results;
         next();
       })
       .catch(err => next(err));

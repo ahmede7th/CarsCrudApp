@@ -12,23 +12,6 @@ save(post){
   VALUES ($/post_title/, $/post_content/) RETURNING *`, post)
 },
 
-// save(post){
-//  return db.one(
-//   `INSERT INTO posts(title,content,comment)VALUES(
-//     $/title/,
-//     $/content/,
-//     $/comment/
-//   )RETURNING *`,post
-// )},
-
-// update(post) {
-//   return db.one('
-//     UPDATE posts \
-//     SET post_title = $[post_title], post_content = $[post_content] \
-//     WHERE id = $[id] \
-//     RETURNING *', post);
-// },
-
 
 update (post) {
   return db.one('UPDATE posts \

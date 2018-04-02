@@ -21,7 +21,7 @@ module.exports = {
 
   redirectToPost (req, res){
     console.log('REDIRECTING')
-    res.redirect('forum/post-index')
+    res.redirect('/forum')
   },
 
   editPost(req, res){

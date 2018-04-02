@@ -1,11 +1,14 @@
-<% include ../partials/boilerplate %>
+<% include ../partials/boilerplate.ejs %>
+<h1>Create</h1>
 
-
-<form method="POST" action="/posts">
-  <input name="post_title" type="text" placeholder="title" />
-  <input name="post_content" type="text" placeholder="content" />
-<% console.log(posts) %>
-  <input type="submit" value="Add it!" />
+<form action="/forum" method="post">
+  <label>title:
+    <input type="text" name="post_title" value="">
+  </label>
+  <label>Content:
+    <input type="text" name="post_content" value="">
+  </label>
+  <button type="submit">Submit</button>
 </form>
 
-<% include ../partials/footer %>
+<% include ../partials/footer.ejs %>
