@@ -1,20 +1,15 @@
 const express = require('express')
 const postsRouter = express.Router()
 const postsController = require('../controllers/forumController')
-const views = require('../controllers/viewsController')
-// carRoutes.get('/',(req,res)=>{
-//   res.render('forum/forum')
-// })
+const viewsController = require('../controllers/viewsController')
 
-postsRouter.get('/:id/edit', postsController.getOne, views.showEditForm, views.show404);
-postsRouter.get('/new',postsController.index,postsController.makeBlankPost, views.showAddForm);
 
-postsRouter.route('/:id')
-  .get(postsController.getOne, views.showOne, views.show404)
-  .put(postsController.update, views.handleUpdate, views.show406)
-  .delete(postsController.destroy, views.handleDelete, views.show404);
+postsRouter.get('/', postsController.index, viewsController.showPosts)
+postsRouter.post('/', postsController.create, viewsController.redirectToPost)
+postsRouter.get('/new', postsController.newpost, viewsController.newPost)
+postsRouter.get('/:id', postsController.getOne, viewsController.showPost)
+postsRouter.get('/:id/edit', postsController.getOne, viewsController.editPost)
+postsRouter.put('/:id', postsController.update)
+postsRouter.delete('/:id', postsController.delete)
 
-postsRouter.route('/')
-  .get(postsController.index, views.showPosts)
-  .post(postsController.create, views.handleCreate, views.show406);
 module.exports = postsRouter;

@@ -2,60 +2,88 @@ const postDB = require('../models/forum')
 
 module.exports = {
 
-  makeBlankPost(req, res, next) {
-      const blankpost = {
-        id:      null,
-        title:   null,
-        content: null,
-        comment: null,
-      };
-      res.locals.posts = blankpost;
-      next();
-    },
+  // makeBlankPost(req, res, next) {
+  //     const blankpost = {
+  //       id:      null,
+  //       title:   null,
+  //       content: null,
+  //       comment: null,
+  //     };
+  //     res.locals.posts = blankpost;
+  //     next();
+  //   },
 
 index(req, res, next){
   postDB.findAll()
-  .then((posts) => {
-    res.locals.posts = posts;
+  .then((results) => {
+    res.locals.posts = results;
     next()
   }).catch(err => next(err));
 },
 
-getOne(req, res, next) {
-    postDB.findById(req.params.id)
-      .then((post) => {
-        console.log('getOne');
-        res.locals.post = post;
-        next();
-      })
-      .catch(err => next(err));
-  },
-
 create(req, res, next) {
     console.log(req.body, 'body');
     postDB.save(req.body)
-      .then((post) => {
-        res.locals.post = post;
+      .then(results => {
+        res.locals.post = result;
         next();
       })
       .catch(err => next(err));
   },
 
+  newpost (req, res, next) {
+    res.locals.newpost = {
+      post_title: "",
+      post_content: "",
+    }
+    next()
+  },
 
-
-update(req, res, next) {
-  console.log(req.body, 'update controller');
-  postDB.update(req.body)
-    .then((post) => {
-      res.locals.post = post;
-      next();
-    })
-    .catch(err => next(err));
-},
-
-destroy(req,res,next){
-  postDB.destroy(req.params.id)
-  .then(() => next())
-      .catch(err => next(err));
+  getOne (req, res, next) {
+      postDB.findOne(req.params.id)
+      .then(result => {
+        res.locals.post = result
+        next()
+      })
+      .catch(err => {
+        next(err)
+      })
     },
+
+    update (req, res) {
+      console.log(Object.assign(req.body, {
+        id: req.params.id
+      }))
+      postDB.update(Object.assign(req.body, {
+        id: req.params.id
+      }))
+      .then(result => {
+        res.json({
+          message: 'ok',
+          data: result
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        res.status(500).json({
+          message: 'error',
+          error: err
+        })
+      })
+    },
+
+    delete (req, res) {
+        postDB.destroy(req.params.id)
+        .then(() => {
+          res.json({
+            message: 'ok'
+          })
+        })
+        .catch(err => {
+          res.status(500).json({
+            message: 'error',
+            error: err
+          })
+        })
+      }
 };

@@ -30,6 +30,7 @@
     "method-override": "^2.3.10",
     "morgan": "^1.9.0",
     "nodemon": "^1.15.1",
+    "npm": "^5.8.0",
     "pg-promise": "^7.5.4",
     "routes": "^2.1.0",
     "view-engine": "^1.1.1"

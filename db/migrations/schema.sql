@@ -1,5 +1,6 @@
 
 \c benzdb;
+
 DROP TABLE IF EXISTS benzdb;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS posts;
@@ -16,7 +17,6 @@ CREATE TABLE IF NOT EXISTS benzdb(
 
 
 
-
 CREATE TABLE IF NOT EXISTS users(
   id SERIAL PRIMARY KEY,
   name VARCHAR,
@@ -25,11 +25,15 @@ CREATE TABLE IF NOT EXISTS users(
 
 
 
-
 CREATE TABLE IF NOT EXISTS posts(
   id SERIAL PRIMARY KEY,
-  title VARCHAR,
-  content TEXT,
-  comment TEXT,
-  commentDate date DEFAULT CURRENT_TIMESTAMP
+  post_title VARCHAR,
+  post_content TEXT,
+  date_created date DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE comments (
+id SERIAL PRIMARY KEY,
+comment_content TEXT,
+data_created TIMESTAMP NOT NULL DEFAULT NOW()
 );

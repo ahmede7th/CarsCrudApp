@@ -2,17 +2,9 @@
 
 
 <form method="POST" action="/posts">
-  <input name="title" type="text" placeholder="title" />
-  <input name="content" type="text" placeholder="content" />
-  <input name="comment" type="text" placeholder="comment" />
-  <select name="post_id">
-    <% posts.forEach(post =>{ %>
-      <option value="<%= post.id %>" <%=post.id === data.post_id ? 'selected' : '' %>>
-      <%= post.post %>
-      </option>
-    <% }) %>
-  </select>
-  <input name="post_type" type="text" placeholder="post">
+  <input name="post_title" type="text" placeholder="title" />
+  <input name="post_content" type="text" placeholder="content" />
+<% console.log(posts) %>
   <input type="submit" value="Add it!" />
 </form>
 

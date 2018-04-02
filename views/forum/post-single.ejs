@@ -1,13 +1,17 @@
 <% include ../partials/boilerplate %>
 
 <div class='post'>
-  <h1><%= data.title %></h1>
-  <h3><%= data. %></h3>
-  <a href="/posts/<%= data.id %>/edit"> Edit this post </a>
+  <h1>Post <%= data.id %></h1>
+  <h2><%= data.post_title %></h2>
+  <h2><%= data.post_content%></h2>
+  <h2><%= data.date_created%></h2>
+<button>
+  <a href="/forum/<%= data.id %>/edit"> Edit this post </a>
+</button>
   <form action="/posts/<%= data.id %>?_method=Delete" method="Post">
     <input type="Submit" value="Delete"/>
   </form>
-  <a href='/posts/'>See all posts</a>
+  <a href='/forum'>See all posts</a>
 </div>
 
 <% include ../partials/footer %>
