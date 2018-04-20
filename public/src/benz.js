@@ -1,6 +1,7 @@
 // let apiURL = `https://api.mercedes-benz.com/configurator/v1/`
 // let apiKey = `apikey=0cf84dde-d453-42ac-bcbe-b90ed0e32ae0`
 // let URL = apiURL+apiKey
+console.log('BENZ>JS SCRIPT')
 function findAll(data)
 {
   $.each( data, function( i, item ) {
@@ -29,9 +30,6 @@ $(getOne=>{
     })
 
     })
-
-
-
 
 
 

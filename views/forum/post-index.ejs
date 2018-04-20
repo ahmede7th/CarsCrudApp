@@ -1,5 +1,11 @@
-
+<div class="weapper">
+<div class="header">
+  <div class="menu">
 <% include ../partials/boilerplate %>
+</div>
+</div>
+
+<div class="contnet">
 <h2>Forum</h2>
 <button type="button" name="button"><a href="/forum/new">Add post</a></button>
 
@@ -11,7 +17,18 @@
     <button><a href='/forum/<%= post.id %>'>More</a></button>
 
     <h2>--------------------------------</h2>
-  </div>
-<% } %>
 
+  </div>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<% } %>
+</div>
+<div class="footer">
 <% include ../partials/footer %>
+</div>
+</div>
