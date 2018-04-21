@@ -27,12 +27,14 @@ app.use('/forum',forumRoutes)
 app.get(`/`,(req, res)=>{
   res.render('index',{
     title: "Cars Crud App",
-    heading: 'Welcome to the cars app!',
-    subheading: "It's a car search app.",
     showAuthors:true,
     authors:[`Muhammad Ahmed`]
   })
 });
+
+app.get('/search',(req,res)=>{
+  res.render('cars/search',{})
+})
 
 app.get(`*`,(req,res)=>{
   res.status(404).send('404 NOT FOUND *')

@@ -4,10 +4,6 @@ const carsController = require('../controllers/carsController')
 // const postsController = require('../controllers/forumController')
 // const views = require('../controllers/viewsController')
 
-carRoutes.get('/search',(req,res)=>{
-  res.render('cars/search',{})
-})
-
 // carRoutes.get('/:id',carsController.show)
 carRoutes.put('/:id',carsController.update)
 
