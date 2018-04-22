@@ -3,7 +3,7 @@
 
 <h2>Forum</h2>
 <button type="button" name="button"><a href="/forum/new">Add post</a></button>
-
+<br>
 <% for (let post of data) { %>
   <div class='post'>
     <p><%= post.id %></p>
@@ -11,16 +11,16 @@
     <p><%= post.post_content %></p>
     <button><a href='/forum/<%= post.id %>'>More</a></button>
 
-    <h2>--------------------------------</h2>
-
-  </div>
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+    <hr color="white"></hr
 <% } %>
+
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <h5 class="card-title">Special title treatment</h5>
+  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  <a href="#" class="btn btn-primary">Comment</a>
+</div>
+</div>
 
 <% include ../partials/footer %>
