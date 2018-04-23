@@ -22,14 +22,12 @@ https://carscrudapp.herokuapp.com/
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/ahmede7th/CarsCrudApp/contributors) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/ahmede7th/CarsCrudApp/blob/master/contributors/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 
 ## Authors
 
 * **Muhammad Ahmed** - *Initial work* - [CarsCrudApp](https://github.com/ahmede7th/CarsCrudApp)
-
-See also the list of [contributors](https://github.com/ahmede7th/CarsCrudApp/contributors) who participated in this project.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
