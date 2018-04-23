@@ -1,4 +1,3 @@
-\c benzdb;
 INSERT INTO benzdb(name, num, exp, height, weight, type)
 VALUES
 (

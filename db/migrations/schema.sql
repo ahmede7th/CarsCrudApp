@@ -1,6 +1,3 @@
-
-\c benzdb;
-
 DROP TABLE IF EXISTS benzdb;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS posts;
