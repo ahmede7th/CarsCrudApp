@@ -75,9 +75,7 @@ create(req, res, next) {
     delete (req, res) {
         postDB.destroy(req.params.id)
         .then(() => {
-          res.json({
-            message: 'ok'
-          })
+          res.redirect('/forum')
         })
         .catch(err => {
           res.status(500).json({

@@ -1,13 +1,11 @@
 console.log('BENZ>JS SCRIPT')
 function findAll(data)
 {
-  $('p').append('name')
+  $( "#mainp" ).empty();
   $.each( data, function( i, item ) {
-    $('p').append("<br>name: <a id=single href=benz/car-one>"+data[i].name+'<br>'+'<br></a>')
-    $('p').append('class: '+data[i].vehicleClass.className+'<br>'+'<br>')
-    $('p').append('price: $'+data[i].priceInformation.price+'<br>'+'<br>')
-    $('p').append('-----------------------------------'+'<br>')
-
+    $('#mainp').append(`<div class="card"> <div class="card-header">`+ data[i].vehicleClass.className+ `</div>
+    <div class="card-body"> <h5 class="card-title">`+ data[i].name + `</h5><p class="card-text">`+
+    `</p><a href="#" class="btn btn-primary">$`+ data[i].priceInformation.price+`</a></div></div>`)
   })
 }
 
@@ -22,7 +20,6 @@ $(showAllSedans=>{
       }
     }).done(function( data ) {
       console.log(data)
-      $( "p" ).empty();
       findAll(data)})})})
 
 
@@ -36,7 +33,6 @@ $(showAllConvertables=>{
       }
     }).done(function( data ) {
       console.log(data)
-      $( "p" ).empty();
       findAll(data)})})})
 
 
@@ -50,7 +46,6 @@ $(showAllCoupes=>{
       }
     }).done(function( data ) {
       console.log(data)
-      $( "p" ).empty();
       findAll(data)})})})
 
 
@@ -65,5 +60,4 @@ $(showAllOffroad=>{
       }
     }).done(function( data ) {
       console.log(data)
-      $( "p" ).empty();
       findAll(data)})})})

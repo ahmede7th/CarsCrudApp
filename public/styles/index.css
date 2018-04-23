@@ -2,25 +2,23 @@
 body{
   background-image: url("/img/grey_background.jpg");
   color:white;
-}
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 40px 100px 40px;
-}
-.header {
-    grid-colum: span 12;
+
 }
 
-.menu{
-  grid-column: span 4;
+.main{
+  font-family: "Bubblegum Sans";
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+	line-height: 28px;
 }
-.content{
-    grid-column: span 8;
-}
+
+
 .footer{
-    grid-column: span 12;
+  padding-top: 50vh;
 }
+
 @media screen and (max-width: 680px){
   .header{
     grid-colum: span 6;

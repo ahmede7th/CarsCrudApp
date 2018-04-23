@@ -3,24 +3,20 @@
 
 <h2>Forum</h2>
 <button type="button" name="button"><a href="/forum/new">Add post</a></button>
-<br>
+<br><div align="center">
 <% for (let post of data) { %>
-  <div class='post'>
-    <p><%= post.id %></p>
-    <p><%= post.post_title %></p>
-    <p><%= post.post_content %></p>
-    <button><a href='/forum/<%= post.id %>'>More</a></button>
-
-    <hr color="white"></hr
+    <div style="color:blue;">
+    <hr color="white"></hr>
+        <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= post.id %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= post.post_title %></h6>
+        <p class="card-text"><%= post.post_content %></p>
+        <a class="btn btn-primary" href='/forum/<%= post.id %>'>More</a>
+        <a href="#" class="btn btn-primary">Comment</a>
+      </div>
+      </div>
+      </div>
 <% } %>
-
 </div>
-<div class="card" style="width: 18rem;">
-<div class="card-body">
-  <h5 class="card-title">Special title treatment</h5>
-  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  <a href="#" class="btn btn-primary">Comment</a>
-</div>
-</div>
-
 <% include ../partials/footer %>
